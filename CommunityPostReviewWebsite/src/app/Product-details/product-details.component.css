@@ -1,0 +1,14 @@
+.edit-form {
+    max-width: 400px;
+    margin: auto;
+    top: 50px;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 0 11px rgb(0, 0, 0);
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.qform {
+    height: 100px;
+    border-radius: 30px;
+}

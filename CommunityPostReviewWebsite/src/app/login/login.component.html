@@ -1,0 +1,30 @@
+<div *ngIf="info.token; else loggedOut">
+    <div class="container info">
+        <div class="row">
+            <div class="first">
+
+
+                <button class="btn btn-success"><i class="fa fa-circle" aria-hidden="true"></i></button>
+
+                <strong class="firstt"> Online</strong> {{ info.username}}<br />
+
+            </div>
+            <div class="second">
+                <button class="btn btn-primary">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </button>
+
+                <!-- <strong class="secondd"> Registered</strong> {{Review.count}} -->
+            </div>
+            <button class="btn btn-danger logout" (click)="logout()">Logout</button>
+
+        </div>
+
+        <br>
+        <br><br>
+        <br>
+    </div>
+</div>
+<ng-template #loggedOut>
+    Please login.
+</ng-template>

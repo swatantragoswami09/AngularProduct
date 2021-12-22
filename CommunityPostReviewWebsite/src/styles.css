@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://images.unsplash.com/photo-1509023464722-18d996393ca8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNTg3NDB8MHwxfHNlYXJjaHw0fHxkYXJrfGVufDB8fHx8MTYzNzY1NzU2Mg&ixlib=rb-1.2.1&q=80&w=1080");
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ques {
+  border: black;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+button:hover {
+  box-shadow: 0 0 11px rgb(0, 0, 0);
+}
+
+a {
+  color: black;
+}
+
+button {
+  color: black;
+}

@@ -1,0 +1,22 @@
+.first {
+    margin-top: 100px;
+    margin-left: 250px;
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.second {
+    margin-top: 100px;
+    margin-left: 170px;
+}
+
+.logout {
+    margin-left: 40%;
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.info {
+    color: black;
+    margin-top: 100px;
+    box-shadow: 0 0 11px rgb(0, 0, 0);
+    background-color: rgba(245, 245, 245, 0.4);
+}

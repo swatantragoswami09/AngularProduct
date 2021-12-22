@@ -1,0 +1,21 @@
+.answer {
+    color: rgba(0, 0, 0, 0.603);
+    margin-top: 100px;
+    box-shadow: 0 0 11px rgb(255, 255, 255);
+    /* background-color: rgba(0, 0, 0, 0.082);
+   */
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.ans {
+    color: rgba(0, 0, 0, 0.274);
+    margin-top: 10px;
+    box-shadow: 0 0 11px rgb(0, 0, 0);
+}
+
+.para {
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.993);
+}

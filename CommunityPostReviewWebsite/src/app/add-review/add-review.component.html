@@ -1,0 +1,64 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Product Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Category"
+          required
+          [(ngModel)]="currentReview.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Review">Review</label>
+        <input
+          class="form-control"
+          id="question"
+          placeholder="Raise a Review"
+          required
+          [(ngModel)]="currentReview.review"
+          name="review"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Review">Brand Name</label>
+        <input
+          class="form-control"
+          id="question"
+          placeholder="Please Write the Brand Name"
+          required
+          [(ngModel)]="currentReview.product"
+          name="review"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Review">Product Code</label>
+        <input
+          class="form-control"
+          id="question"
+          placeholder="Please Write the Product Code"
+          required
+          [(ngModel)]="currentReview.productCode"
+          name="review"
+        />
+      </div>
+
+      <button (click)="saveReview()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Product was added successfully!</h4>
+      <button
+        style="text-align: center"
+        class="btn btn-success"
+        (click)="newReview()"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+</div>

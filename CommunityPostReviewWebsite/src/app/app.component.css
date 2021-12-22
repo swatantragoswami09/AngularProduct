@@ -1,0 +1,13 @@
+.navbar {
+  background-position: 0ch;
+}
+.nv ul li a {
+  color: white;
+}
+nav-link {
+  transition: box-shadow 0.3s;
+  border: 2px solid #ccc;
+}
+.nav-link:hover {
+  box-shadow: 0 0 11px rgb(0, 0, 0);
+}

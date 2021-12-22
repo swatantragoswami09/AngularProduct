@@ -1,0 +1,51 @@
+<div>
+    <div *ngIf="currentProduct.id" class="edit-form">
+        <h4>Products</h4>
+        <form>
+            <div class="form-group">
+                <label for="title">Product name</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="currentProduct.title" name="title" />
+            </div>
+            <div class="form-group">
+                <label for="review">review</label>
+                <input type="text" class="form-control" id="product" [(ngModel)]="currentProduct.review" name="review" />
+            </div>
+            <div class="form-group">
+                <label for="review">Brand</label>
+                <input type="text" class="form-control" id="product" [(ngModel)]="currentProduct.product" name="Brand" />
+            </div>
+            <div class="form-group">
+                <label for="review">Product Code</label>
+                <input type="text" class="form-control" id="product" [(ngModel)]="currentProduct.productCode" name="Product-Code" />
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label><strong>Status:</strong></label> {{ currentProduct.approval ? "approval" : "Pending" }}
+            </div>
+        </form>
+
+        <button class="btn btn-primary mr-2" *ngIf="currentProduct.approval" (click)="updateApproved(false)">
+      MarkNotApproved
+    </button>
+        <button *ngIf="!currentProduct.approval" class="btn btn-primary mr-2" (click)="updateApproved(true)">
+      MarkAsApproved
+    </button>
+
+        <button class="btn btn-danger mr-2" (click)="deleteProduct()">
+      Delete
+    </button>
+
+        <button type="submit" class="btn btn-success m-2" (click)="update()">
+      Update
+    </button>
+        <p>{{ message }}</p>
+    </div>
+
+    <div *ngIf="!currentProduct.id">
+        <br />
+        <p>Cannot access this Product...</p>
+    </div>
+</div>

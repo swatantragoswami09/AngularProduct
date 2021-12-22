@@ -1,0 +1,50 @@
+.lists {
+  overflow: hidden;
+}
+
+.box {
+  transition: box-shadow 0.3s;
+  border: 2px solid rgb(0, 0, 0);
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(8, 235, 95, 0.911);
+}
+i {
+  margin: 3px;
+}
+
+.search {
+  margin-top: 5px;
+}
+.image {
+  text-align: center;
+  height: 100px;
+  width: 370px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY2YM-Slyj8nc5rPExn0IuOE_7qHuyauDNXFivAK5fa3YhL1C2HVrWnQTdhJVduUYBJJc&usqp=CAU.jpg"),
+    linear-gradient(#e7e7e7, #d13531);
+  border-radius: 10%;
+}
+.para {
+  text-align: center;
+}
+.com {
+  width: 50px;
+  height: 50px;
+}
+.inline {
+  display: inline;
+}
+.inline .btn {
+  margin-left: 25px;
+}
+.down {
+  color: white;
+  box-shadow: 0 0 11px rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.329);
+}
+.error {
+  font-weight: 700%;
+  color: #d13531;
+  text-align: center;
+  font-style: italic;
+}

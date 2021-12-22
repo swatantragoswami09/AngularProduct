@@ -1,0 +1,19 @@
+<br>
+<div class="col-3">
+    <h3><button class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Total Products :-
+            {{review.length}}</button> </h3>
+</div>
+
+<div class="container answer" style="text-align: center;">
+
+    <div class="ans" *ngFor="let review of review; let i = index" [class.active]="i == currentIndex" (click)="setActivePost(review, i)">
+        <h2>
+
+            <h5>Title- {{review[i].title}}</h5>
+        </h2>
+        <!-- <P>hi</P> -->
+
+
+
+    </div>
+</div>

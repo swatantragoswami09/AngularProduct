@@ -1,0 +1,163 @@
+<div class="row search">
+  <div class="col-3">
+    <div ngbDropdown class="d-inline-block">
+      <button
+        class="btn btn-outline-primary"
+        id="dropdownBasic1"
+        ngbDropdownToggle
+      >
+        Sort By
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="sortbyLatest()">New</button>
+        <button ngbDropdownItem (click)="sortbyLatest()">Date</button>
+        <button ngbDropdownItem (click)="sortbyName('title')">Name(A-Z)</button>
+        <button ngbDropdownItem (click)="sortbyLike()">Popularity</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Product name/Brand/Product code"
+        [(ngModel)]="title"
+        [(ngModel)]="product"
+        [(ngModel)]="ProductCode"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" (click)="searchTitle()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <h3>
+      <button class="btn btn-danger">
+        <i class="fa fa-question-circle" aria-hidden="true"></i> Total Products
+        :- {{ reviews.length }}
+      </button>
+    </h3>
+  </div>
+</div>
+<p class="error">{{ error }}</p>
+
+<br /><br /><br /><br /><br />
+<div class="col-12">
+  <h4>Product List</h4>
+  <ul class="list-group">
+    <li
+      class="list-group-item ques box"
+      *ngFor="let review of reviews; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveProducts(review, i)"
+    >
+      <div class="row">
+        <div class="col-9">
+          <h3 class="inline">Product Name:- {{ review.title }}</h3>
+        </div>
+        <div class="col-2.5" style="text-align: center">
+          <div *ngIf="review.approved == true" class="inline">
+            <i
+              class="fa fa-check btn btn-outline-success"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="inline">
+            <button
+              (click)="likeReview(currentReview.count + 1)"
+              class="btn btn-outline-danger"
+            >
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </button>
+            <h4 class="inline ml-2" aria-hidden="true">
+              {{ review.count }}
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <!-- <div *ngIf='review.comment!=""' class="inline checked">
+                        <label><strong><i class="fa fa-comments btn btn-outline-dark" aria-hidden="true"></i></strong></label>
+                    </div> -->
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<br /><br /><br /><br />
+<br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+<!-- <br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br> -->
+<div
+  data-bs-spy="scroll"
+  data-bs-offset="0"
+  class="scrollspy-example"
+  tabindex="0"
+>
+  <div class="col-12 down">
+    <div *ngIf="currentReview">
+      <div>
+        <label><strong>Product:</strong></label>
+        <h2>
+          <button class="btn btn-danger">
+            <b>Review of this product</b
+            ><i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          {{ currentReview.review }}
+        </h2>
+      </div>
+      <hr />
+      <div *ngIf="currentReview.approval != null">
+        <p style="font-weight: 700; font-style: italic">
+          <button class="btn btn-success">
+            <b>Approval</b><i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          {{ currentReview.approval }}
+        </p>
+      </div>
+      <hr />
+      <!-- <div *ngIf=" currentReview.comment!=null" style="background-color: rgb(0, 0, 0); padding: 10px;">
+            <label><strong><i class="fa fa-comments" aria-hidden="true"></i></strong></label>
+            <p> <i class="fa fa-quote-left" aria-hidden="true"></i> {{  currentReview.comment }} <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+        </div> -->
+      <hr />
+      <div id="productlist">
+        <label><strong>Status:</strong></label>
+        <div *ngIf="currentReview.approval == true" class="inline">
+          <i class="fa fa-check btn btn-success" aria-hidden="true"></i>
+        </div>
+
+        <a routerLink="/products/{{ currentReview.id }}">
+          <button class="btn btn-warning inline ml-5 mr-2">
+            <i class="fa fa-pencil" aria-hidden="true"> Edit</i>
+          </button>
+        </a>
+
+        <button
+          (click)="likeReview(currentReview.count + 1)"
+          class="btn btn-danger inline mr-2"
+        >
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        </button>
+        {{ currentReview.count }} Ratings
+
+        <button
+          style="color: yellow; margin-left: 600px"
+          class="btn"
+          (click)="goTop()"
+        >
+          <i class="fa fa-angle-up"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br /><br /><br /><br /><br /><br />
+<div style="color: yellow" *ngIf="!currentReview">
+  <br />
+  <p>Please click on Any Product for more details</p>
+</div>
